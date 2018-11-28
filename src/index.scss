@@ -1,5 +1,11 @@
 @import "./styles/bulma";
 
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -21,4 +27,20 @@ code {
 
 main {
     flex: 1;
+}
+
+.list {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    .list-item {
+        position: relative;
+        display: block;
+        padding: 0.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        padding: 0.75rem 1.25rem;
+        margin-bottom: -1px;
+    }
 }
