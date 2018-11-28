@@ -11,6 +11,8 @@
         "react-scripts": "2.1.1"
     },
     "devDependencies": {
+        "enzyme": "^3.7.0",
+        "enzyme-adapter-react-16": "^1.7.0",
         "eslint-config-airbnb": "^17.1.0",
         "eslint-config-prettier": "^3.3.0",
         "eslint-plugin-import": "^2.14.0",
@@ -20,7 +22,8 @@
         "husky": "^1.1.4",
         "lint-staged": "^8.0.4",
         "node-sass": "^4.10.0",
-        "prettier": "^1.15.2"
+        "prettier": "^1.15.2",
+        "react-test-renderer": "^16.6.3"
     },
     "scripts": {
         "start": "react-scripts start",
