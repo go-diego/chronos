@@ -45,6 +45,7 @@ export default class Home extends React.Component {
     };
 
     render() {
+        const {history} = this.props;
         const {tags} = this.state;
         const uniqueFeatures = []
             .concat(...tags.map(tag => tag.features))
@@ -64,7 +65,10 @@ export default class Home extends React.Component {
                     {tags.map(tag => {
                         return (
                             tag.isActive && (
-                                <li className="list-item" key={tag.tagId}>
+                                <li
+                                    onClick={() => history.push(`details/${tag.tagId}`)}
+                                    className="list-item"
+                                    key={tag.tagId}>
                                     <div className="flex">
                                         <p className="is-size-5"> {tag.label}</p>
                                         <div className="tags">
