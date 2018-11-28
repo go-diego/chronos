@@ -1,6 +1,6 @@
 import format from "date-fns/format";
+import subHours from "date-fns/sub_hours";
 
-const now = new Date();
 export default class Api {
     constructor() {
         this.TAGS_URL = "http://cs-mock-timeseries-api.azurewebsites.net/api/Tag";
@@ -10,8 +10,8 @@ export default class Api {
                 "Content-Type": "application/json; charset=utf-8"
             }
         };
-        this.DEFAULT_START_TS = now.toUTCString();
-        this.DEFAULT_END_TS = now.toUTCString();
+        this.DEFAULT_START_TS = format(subHours(new Date(), 48), "YYYY-MM-DD");
+        this.DEFAULT_END_TS = format(new Date(), "YYYY-MM-DD");
     }
 
     async getTags() {
@@ -25,5 +25,12 @@ export default class Api {
             {...this.REQUEST_HEADERS}
         );
         return await res.json();
+    }
+
+    get defaultTimeSeriesRange() {
+        return {
+            startTS: this.DEFAULT_START_TS,
+            endTS: this.DEFAULT_END_TS
+        };
     }
 }
