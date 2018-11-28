@@ -19,6 +19,12 @@ export default class Api {
         return await res.json();
     }
 
+    async getTagById(tagId) {
+        const tags = await this.getTags();
+        const tag = tags.filter(tag => tag.tagId === tagId);
+        return tag.length > 0 ? tag[0] : {};
+    }
+
     async getData(tagId, startTS = this.DEFAULT_START_TS, endTS = this.DEFAULT_END_TS) {
         const res = await fetch(
             `${this.DATA_POINTS_URL}/${tagId}?startTS=${startTS}&endTS=${endTS}`,

@@ -16,6 +16,7 @@ export default class Home extends React.Component {
             tag.isActive = true;
             return tag;
         });
+        console.log("tags", tags);
         this.setState({tags});
     }
 
