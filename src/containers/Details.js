@@ -41,9 +41,6 @@ export default class Details extends React.Component {
         const {startTS, endTS, tag, tagData} = this.state;
         const {tagId} = this.props.match.params;
 
-        console.log("tag", tag);
-        console.log("tagData", tagData);
-
         let data = [];
         let yAxisTitle = "";
         let yDomain = null;
@@ -77,7 +74,6 @@ export default class Details extends React.Component {
                 });
         }
 
-        console.log("DATA", data);
         return (
             <div className="section">
                 <h1 className="is-size-2">{tagId}</h1>
