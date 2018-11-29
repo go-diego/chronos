@@ -37,7 +37,9 @@ export default class Filter extends React.Component {
                         <span
                             key={i}
                             onClick={() => this.handleToggleOption(i)}
-                            className={`tag ${option.active ? "is-success" : "is-light"}`}>
+                            className={`click is-medium tag ${
+                                option.active ? "is-success" : "is-light"
+                            }`}>
                             {option.label}
                             {option.active && <button className="delete is-small" />}
                         </span>

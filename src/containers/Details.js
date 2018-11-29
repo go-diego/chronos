@@ -46,8 +46,10 @@ export default class Details extends React.Component {
 
         let data = [];
         let yAxisTitle = "";
+        let yDomain = null;
         switch (tag.unit) {
             case "Status":
+                yDomain = [0, 1];
                 yAxisTitle = tag.unit;
                 data = tagData.map(datum => {
                     return {
@@ -94,6 +96,7 @@ export default class Details extends React.Component {
                     </div>
                 </div>
                 <TimeSeries
+                    yDomain={yDomain}
                     data={data}
                     yAxisTitle={yAxisTitle}
                     xAxisTitle={`Time over ${format(new Date(startTS), "MM/DD")} - ${format(

@@ -56,8 +56,9 @@ export default class Home extends React.Component {
 
         return (
             <section className="section">
-                <div className="is-flex">
-                    <h1 className="is-size-2">Tags</h1>
+                <h1 className="is-size-2">Tags</h1>
+
+                <div className="padding">
                     {uniqueFeatures.length > 0 && (
                         <Filter filter={this.handleFilter} options={uniqueFeatures} />
                     )}
@@ -68,7 +69,7 @@ export default class Home extends React.Component {
                             tag.isActive && (
                                 <li
                                     onClick={() => history.push(`details/${tag.tagId}`)}
-                                    className="list-item"
+                                    className="click list-item"
                                     key={tag.tagId}>
                                     <div className="flex">
                                         <p className="is-size-5"> {tag.label}</p>
